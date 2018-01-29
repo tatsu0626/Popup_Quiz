@@ -12,8 +12,13 @@
 		6C96E12E201EF55C00242B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E12C201EF55C00242B06 /* Main.storyboard */; };
 		6C96E130201EF55C00242B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E12F201EF55C00242B06 /* Assets.xcassets */; };
 		6C96E133201EF55C00242B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E131201EF55C00242B06 /* LaunchScreen.storyboard */; };
-		6C96E13B201EF6F200242B06 /* PopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */; };
 		6C96E13F201EFA4900242B06 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96E13E201EFA4900242B06 /* PopupViewController.swift */; };
+		6C96E145201F168300242B06 /* guidanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96E143201F168300242B06 /* guidanceCell.swift */; };
+		6C96E146201F168300242B06 /* guidanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E144201F168300242B06 /* guidanceCell.xib */; };
+		6C96E149201F16B400242B06 /* scoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96E147201F16B400242B06 /* scoreCell.swift */; };
+		6C96E14A201F16B400242B06 /* scoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E148201F16B400242B06 /* scoreCell.xib */; };
+		6C96E14C201F1A4500242B06 /* problem.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E14B201F1A4500242B06 /* problem.csv */; };
+		6C96E14E201F1A6600242B06 /* guidance.csv in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E14D201F1A6600242B06 /* guidance.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +29,13 @@
 		6C96E12F201EF55C00242B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C96E132201EF55C00242B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C96E134201EF55C00242B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupViewController.storyboard; sourceTree = "<group>"; };
 		6C96E13E201EFA4900242B06 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		6C96E143201F168300242B06 /* guidanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guidanceCell.swift; sourceTree = "<group>"; };
+		6C96E144201F168300242B06 /* guidanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = guidanceCell.xib; sourceTree = "<group>"; };
+		6C96E147201F16B400242B06 /* scoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoreCell.swift; sourceTree = "<group>"; };
+		6C96E148201F16B400242B06 /* scoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = scoreCell.xib; sourceTree = "<group>"; };
+		6C96E14B201F1A4500242B06 /* problem.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = problem.csv; sourceTree = "<group>"; };
+		6C96E14D201F1A6600242B06 /* guidance.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = guidance.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +68,45 @@
 		6C96E127201EF55C00242B06 /* Popup_Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				6C96E141201F15BD00242B06 /* Components */,
+				6C96E140201F146300242B06 /* Data Sourse */,
 				6C96E128201EF55C00242B06 /* AppDelegate.swift */,
 				6C96E12A201EF55C00242B06 /* ViewController.swift */,
 				6C96E12C201EF55C00242B06 /* Main.storyboard */,
-				6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */,
 				6C96E12F201EF55C00242B06 /* Assets.xcassets */,
 				6C96E131201EF55C00242B06 /* LaunchScreen.storyboard */,
 				6C96E134201EF55C00242B06 /* Info.plist */,
 				6C96E13E201EFA4900242B06 /* PopupViewController.swift */,
 			);
 			path = Popup_Quiz;
+			sourceTree = "<group>";
+		};
+		6C96E140201F146300242B06 /* Data Sourse */ = {
+			isa = PBXGroup;
+			children = (
+				6C96E14B201F1A4500242B06 /* problem.csv */,
+				6C96E14D201F1A6600242B06 /* guidance.csv */,
+			);
+			path = "Data Sourse";
+			sourceTree = "<group>";
+		};
+		6C96E141201F15BD00242B06 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6C96E142201F15CD00242B06 /* Cells */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6C96E142201F15CD00242B06 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6C96E143201F168300242B06 /* guidanceCell.swift */,
+				6C96E144201F168300242B06 /* guidanceCell.xib */,
+				6C96E147201F16B400242B06 /* scoreCell.swift */,
+				6C96E148201F16B400242B06 /* scoreCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,9 +168,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C96E13B201EF6F200242B06 /* PopupViewController.storyboard in Resources */,
+				6C96E14E201F1A6600242B06 /* guidance.csv in Resources */,
+				6C96E14A201F16B400242B06 /* scoreCell.xib in Resources */,
 				6C96E133201EF55C00242B06 /* LaunchScreen.storyboard in Resources */,
+				6C96E14C201F1A4500242B06 /* problem.csv in Resources */,
 				6C96E130201EF55C00242B06 /* Assets.xcassets in Resources */,
+				6C96E146201F168300242B06 /* guidanceCell.xib in Resources */,
 				6C96E12E201EF55C00242B06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C96E12B201EF55C00242B06 /* ViewController.swift in Sources */,
+				6C96E149201F16B400242B06 /* scoreCell.swift in Sources */,
+				6C96E145201F168300242B06 /* guidanceCell.swift in Sources */,
 				6C96E129201EF55C00242B06 /* AppDelegate.swift in Sources */,
 				6C96E13F201EFA4900242B06 /* PopupViewController.swift in Sources */,
 			);
