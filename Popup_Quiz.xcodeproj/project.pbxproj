@@ -12,6 +12,8 @@
 		6C96E12E201EF55C00242B06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E12C201EF55C00242B06 /* Main.storyboard */; };
 		6C96E130201EF55C00242B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E12F201EF55C00242B06 /* Assets.xcassets */; };
 		6C96E133201EF55C00242B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E131201EF55C00242B06 /* LaunchScreen.storyboard */; };
+		6C96E13B201EF6F200242B06 /* PopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */; };
+		6C96E13F201EFA4900242B06 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96E13E201EFA4900242B06 /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		6C96E12F201EF55C00242B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C96E132201EF55C00242B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C96E134201EF55C00242B06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupViewController.storyboard; sourceTree = "<group>"; };
+		6C96E13E201EFA4900242B06 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 				6C96E128201EF55C00242B06 /* AppDelegate.swift */,
 				6C96E12A201EF55C00242B06 /* ViewController.swift */,
 				6C96E12C201EF55C00242B06 /* Main.storyboard */,
+				6C96E13A201EF6F200242B06 /* PopupViewController.storyboard */,
 				6C96E12F201EF55C00242B06 /* Assets.xcassets */,
 				6C96E131201EF55C00242B06 /* LaunchScreen.storyboard */,
 				6C96E134201EF55C00242B06 /* Info.plist */,
+				6C96E13E201EFA4900242B06 /* PopupViewController.swift */,
 			);
 			path = Popup_Quiz;
 			sourceTree = "<group>";
@@ -123,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C96E13B201EF6F200242B06 /* PopupViewController.storyboard in Resources */,
 				6C96E133201EF55C00242B06 /* LaunchScreen.storyboard in Resources */,
 				6C96E130201EF55C00242B06 /* Assets.xcassets in Resources */,
 				6C96E12E201EF55C00242B06 /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			files = (
 				6C96E12B201EF55C00242B06 /* ViewController.swift in Sources */,
 				6C96E129201EF55C00242B06 /* AppDelegate.swift in Sources */,
+				6C96E13F201EFA4900242B06 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
