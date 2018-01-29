@@ -14,54 +14,36 @@ struct GuidanceTableStruct {
     static let cellSectionCount: Int = 1
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
+class ViewController: UIViewController{
+
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+
+    
+
     
     
-    //Outlet接続をした部品
-   // @IBOutlet var guideTableView: UITableView!
-    @IBOutlet var guideTableView: UITableView!
+
     
-    //テーブルビューに表示する文言の内容を入れておくメンバ変数
-    var guidanceArray: NSMutableArray = []
+    
+var guidanceArray: NSMutableArray = []
     
     //画面出現のタイミングに読み込まれる処理
-    override func viewWillAppear(_ animated: Bool) {
-        
-//        //ガイダンス用のテーブルビューに表示するテキストを(CSV形式で準備)読み込む
-//        let csvBundle = Bundle.main.path(forResource: "guidance", ofType: "csv")
-//
-//        //CSVデータの解析処理
-//        do {
-//
-//            //CSVデータを読み込む
-//            var csvData: String = try String(contentsOfFile: csvBundle!, encoding: String.Encoding.utf8)
-//
-//            csvData = csvData.replacingOccurrences(of: "\r", with: "")
-//
-//            //改行を基準にしてデータを分割する読み込む
-//            let csvArray = csvData.components(separatedBy: "\n")
-//
-//            //CSVデータの行数分ループさせる
-//            for line in csvArray {
-//
-//                //カンマ区切りの1行を["aaa", "bbb", ... , "zzz"]形式に変換して代入する
-//                let parts = line.components(separatedBy: ",")
-//                guidanceArray.add(parts)
-//            }
-//
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-    }
-    
+
     override func viewDidLoad() {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"sbPopupID")
+            as! PopupViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame=self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
 //        super.viewDidLoad()
 //
 //        //ナビゲーションのデリゲート設定
@@ -121,21 +103,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        performSegue(withIdentifier: "goQuiz", sender: nil)
 //    }
   
-    @IBAction func showPopup(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"sbPopupID")
-            as! PopupViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame=self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
-        //ポップアップ表示の処理
-        
-    }
+
    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+//override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
+//    
     
 }
 
@@ -170,3 +143,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //}
 //
 
+
+}

@@ -14,14 +14,12 @@
         <scene sceneID="lAk-D5-2xw">
             <objects>
                 <viewController id="eGs-sf-mC9" customClass="ViewController" customModule="Popup_Quiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eWv-zp-zLq">
+                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Cf2-Io-R6C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tableView>
-                    <connections>
-                        <outlet property="guideTableView" destination="eWv-zp-zLq" id="T3H-ck-1r3"/>
-                    </connections>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4G-il-znj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

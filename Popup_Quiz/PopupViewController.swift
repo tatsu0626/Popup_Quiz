@@ -145,20 +145,20 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
     func setTimer() {
         
         //毎秒ごとにperSecTimerDoneメソッドを実行するタイマーを作成する
-        self.perSecTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(QuizController.perSecTimerDone), userInfo: nil, repeats: true)
+        self.perSecTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(PopupViewController.perSecTimerDone), userInfo: nil, repeats: true)
         
         //指定秒数後にtimerDoneメソッドを実行するタイマーを作成する（問題の時間制限に到達した場合の実行）
-        self.doneTimer = Timer.scheduledTimer(timeInterval: QuizStruct.timerDuration, target: self, selector: #selector(QuizController.timerDone), userInfo: nil, repeats: true)
+        self.doneTimer = Timer.scheduledTimer(timeInterval: QuizStruct.timerDuration, target: self, selector: #selector(PopupViewController.timerDone), userInfo: nil, repeats: true)
     }
     
     //毎秒ごとのタイマーで呼び出されるメソッド
-    func perSecTimerDone() {
+    @objc func perSecTimerDone() {
         pastCounter -= 1
         timerDisplayLabel.text = "あと" + String(self.pastCounter) + "秒"
     }
     
     //問題の時間制限に到達した場合に実行されるメソッド
-    func timerDone() {
+    @objc func timerDone() {
         
         //10秒経過時は不正解として次の問題を読み込む
         totalSeconds = self.totalSeconds + QuizStruct.limitTimer
@@ -309,12 +309,12 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
             //タイマーを破棄する
             resetTimer()
             
-            //Realmに計算結果データを保存する
-            let gameScoreObject = GameScore.create()
-            gameScoreObject.correctAmount = self.correctProblemNumber
-            gameScoreObject.timeCount = NSString(format:"%.3f", self.totalSeconds) as String
-            gameScoreObject.createDate = Date()
-            gameScoreObject.save()
+            //計算結果の処理
+//            let gameScoreObject = GameScore.create()
+//            gameScoreObject.correctAmount = self.correctProblemNumber
+//            gameScoreObject.timeCount = NSString(format:"%.3f", self.totalSeconds) as String
+//            gameScoreObject.createDate = Date()
+//            gameScoreObject.save()
             
             //次のコントローラーへ遷移する
             self.performSegue(withIdentifier: "goScore", sender: nil)
@@ -340,23 +340,23 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
     }
     
     //セグエを呼び出したときに呼ばれるメソッド
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //セグエ名で判定を行う
-        if segue.identifier == "goScore" {
-            
-            //遷移先のコントローラーの変数を用意する
-            let scoreController = segue.destination as! ScoreController
-            
-            //遷移先のコントローラーに渡したい変数を格納（型を合わせてね）
-            scoreController.correctProblemNumber = correctProblemNumber
-            scoreController.totalSeconds = NSString(format:"%.3f", totalSeconds) as String
-            
-            //計算結果を入れる変数を初期化
-            self.resetGameValues()
-        }
-    }
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        
+//        //セグエ名で判定を行う
+//        if segue.identifier == "goScore" {
+//            
+//            //遷移先のコントローラーの変数を用意する
+//            let scoreController = segue.destination as! ScoreController
+//            
+//            //遷移先のコントローラーに渡したい変数を格納（型を合わせてね）
+//            scoreController.correctProblemNumber = correctProblemNumber
+//            scoreController.totalSeconds = NSString(format:"%.3f", totalSeconds) as String
+//            
+//            //計算結果を入れる変数を初期化
+//            self.resetGameValues()
+//        }
+//    }
+//    
     //ゲームのカウントに関する数を初期化する
     func resetGameValues() {
         counter = 0
