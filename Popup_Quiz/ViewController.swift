@@ -16,6 +16,14 @@ struct GuidanceTableStruct {
 
 class ViewController: UIViewController{
 
+    @IBAction func showPopup(_ sender: Any) {
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"sbPopupID")
+            as! PopupViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame=self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+    }
     
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        <#code#>
@@ -38,12 +46,7 @@ var guidanceArray: NSMutableArray = []
     //画面出現のタイミングに読み込まれる処理
 
     override func viewDidLoad() {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"sbPopupID")
-            as! PopupViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame=self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+       
 //        super.viewDidLoad()
 //
 //        //ナビゲーションのデリゲート設定

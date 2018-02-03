@@ -63,7 +63,7 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
     var correctProblemNumber: Int = 0
     var totalSeconds: Double = 0.000
     
-    //問題の内容を入れておくメンバ変数（計5問）
+    //問題の内容を入れておくメンバ変数（計10問）
     var problemArray: NSMutableArray = []
     
     //問題毎の回答時間を算出するための時間を一時的に格納するためのメンバ変数
@@ -76,6 +76,11 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
     var timeProblemSolvedThree: Date! //第3問回答時点の時間
     var timeProblemSolvedFour: Date!  //第4問回答時点の時間
     var timeProblemSolvedFive: Date!  //第5問回答時点の時間
+     var timeProblemSolvedSix: Date!  //第6問回答時点の時間
+     var timeProblemSolvedSeven: Date!  //第7問回答時点の時間
+     var timeProblemSolvedEight: Date!  //第8問回答時点の時間
+     var timeProblemSolvedNine: Date!  //第9問回答時点の時間
+     var timeProblemSolvedTen: Date!  //第10問回答時点の時間
     
     //画面出現中のタイミングに読み込まれる処理
     override func viewWillAppear(_ animated: Bool) {
@@ -124,23 +129,34 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
         problemTextView.delegate = self
     }
 
-    //各選択肢のボタンアクション
-    @IBAction func answerActionOne(_ sender: AnyObject) {
-        judgeCurrentAnswer(Answer.one.rawValue)
+   
+    
+     //各選択肢のボタンアクション
+    
+    @IBAction func answerActionOne(_ sender: Any) {
+       judgeCurrentAnswer(Answer.one.rawValue)
     }
     
-    @IBAction func answerActionTwo(_ sender: AnyObject) {
+    @IBAction func answerActionTwo(_ sender: Any) {
         judgeCurrentAnswer(Answer.two.rawValue)
     }
     
-    @IBAction func answerActionThree(_ sender: AnyObject) {
+    @IBAction func answerActionThree(_ sender: Any) {
         judgeCurrentAnswer(Answer.three.rawValue)
     }
     
-    @IBAction func answerActionFour(_ sender: AnyObject) {
-        judgeCurrentAnswer(Answer.four.rawValue)
+    @IBAction func answerActionFour(_ sender: Any) {
+         judgeCurrentAnswer(Answer.four.rawValue)
     }
     
+    
+    
+    
+    
+    
+    
+  
+
     //タイマーをセットするメソッド
     func setTimer() {
         
@@ -175,6 +191,8 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
             timeProblemSolvedFour = Date()
         case 4:
             timeProblemSolvedFive = Date()
+        //６問目以降に関しても記入
+        
         default:
             tmpTimerCount = 0.000
         }
@@ -274,6 +292,7 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
         case 4:
             timeProblemSolvedFive = Date()
             tmpTimerCount = self.timeProblemSolvedFive.timeIntervalSince(self.timeProblemSolvedFour)
+            //6問目以降の時間算出
         default:
             tmpTimerCount = 0.000
         }
@@ -406,8 +425,5 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
 
 
 
-//  @IBAction func closePopup(_ sender: Any) {
- //       self.view.removeFromSuperview()
-        //ポップアップ表示時の背景色変更
- //    }
+
 
