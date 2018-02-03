@@ -13,16 +13,7 @@
         <!--View Controller-->
         <scene sceneID="lAk-D5-2xw">
             <objects>
-                <viewController id="eGs-sf-mC9" customClass="ViewController" customModule="Popup_Quiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="O5M-HK-oSh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="showPopup:" destination="eGs-sf-mC9" eventType="touchUpInside" id="igu-B5-ObG"/>
-                        </connections>
-                    </button>
-                </viewController>
+                <viewController id="eGs-sf-mC9" customClass="ViewController" customModule="Popup_Quiz" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S4G-il-znj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="159"/>

@@ -20,7 +20,7 @@ enum Answer: Int {
 //ゲームに関係する定数
 struct QuizStruct {
     static let timerDuration: Double = 10
-    static let dataMaxCount: Int = 5
+    static let dataMaxCount: Int = 10
     static let limitTimer: Double = 10.000
     static let defaultCounter: Int = 10
 }
@@ -192,6 +192,16 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
         case 4:
             timeProblemSolvedFive = Date()
         //６問目以降に関しても記入
+        case 5:
+            timeProblemSolvedSix = Date()
+        case 6:
+            timeProblemSolvedSeven = Date()
+        case 7:
+            timeProblemSolvedEight = Date()
+        case 8:
+            timeProblemSolvedNine = Date()
+        case 9:
+            timeProblemSolvedTen = Date()
         
         default:
             tmpTimerCount = 0.000
@@ -235,7 +245,6 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-        
     }
     
     //タイマーを破棄して再起動を行うメソッド
@@ -293,9 +302,24 @@ class PopupViewController: UIViewController, UINavigationControllerDelegate, UIT
             timeProblemSolvedFive = Date()
             tmpTimerCount = self.timeProblemSolvedFive.timeIntervalSince(self.timeProblemSolvedFour)
             //6問目以降の時間算出
+        case 5:
+            timeProblemSolvedSix = Date()
+            tmpTimerCount = self.timeProblemSolvedSix.timeIntervalSince(self.timeProblemSolvedFive)
+        case 6:
+            timeProblemSolvedSeven = Date()
+            tmpTimerCount = self.timeProblemSolvedSeven.timeIntervalSince(self.timeProblemSolvedSix)
+        case 7:
+            timeProblemSolvedEight = Date()
+            tmpTimerCount = self.timeProblemSolvedEight.timeIntervalSince(self.timeProblemSolvedSeven)
+        case 8:
+            timeProblemSolvedNine = Date()
+            tmpTimerCount = self.timeProblemSolvedNine.timeIntervalSince(self.timeProblemSolvedEight)
+        case 9:
+            timeProblemSolvedTen = Date()
+            tmpTimerCount = self.timeProblemSolvedTen.timeIntervalSince(self.timeProblemSolvedNine)
         default:
             tmpTimerCount = 0.000
-        }
+        };
         
         //合計時間に問題の回答時間を加算する
         totalSeconds = totalSeconds + tmpTimerCount
